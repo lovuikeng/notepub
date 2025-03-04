@@ -50,7 +50,16 @@ def _(df, mo):
 
 @app.cell
 def _(csv_path, dtl):
-    df = dtl.build_devicce_conn_df(csv_path)
+    csv_source = csv_path
+    if "github" in csv_path:
+        import requests
+        from io import StringIO
+
+        response = requests.get(csv_path)
+        data = response.text
+        csv_source = StringIO(data)
+
+    df = dtl.build_devicce_conn_df(csv_source)
     return (df,)
 
 

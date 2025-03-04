@@ -1,0 +1,15 @@
+[project]
+name = "data_utils"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "vlo", email = "vlo@scope.com" }]
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0.2", "pandas>=2.2.3"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.3.5"]
